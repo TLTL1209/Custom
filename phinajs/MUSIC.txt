@@ -1,0 +1,178 @@
+// グローバルに展開
+phina.globalize();
+// アセット
+var ASSETS = {
+  // 画像
+  image: {
+    'bg': 'https://user-images.githubusercontent.com/103755573/178067764-5d269538-df99-4ad9-8b81-cfa509214f53.png',
+  },
+};
+//メインシーン
+
+phina.define("MainScene", {
+  // 継承
+  superClass: 'DisplayScene',
+  // 初期化
+  init: function() {
+    // 親クラス初期化
+    this.superInit();
+    // 背景色
+    this.backgroundColor = 'SkyBlue';
+    // Shapeを作成してシーンに追加
+
+    // 背景
+    Sprite('bg').addChildTo(this)
+    .setPosition(this.gridX.center(), this.gridY.center());
+
+      // タイトル
+    var label = Label('MUSIC・CUSTOM・ROBOT').addChildTo(this);
+    label.setPosition(this.gridX.center(), 100);
+    label.fontSize = 42;
+    label.fontFamily = "'Arial Black'";
+    label.fill = 'LightSlateGray';
+    label.strokeWidth = 8;
+    label.stroke = 'white';
+
+    //項目
+    var label2 = Label('Drums       Backing       Melody').addChildTo(this);
+    label2.setPosition(this.gridX.center(), 288);
+    label2.fontSize = 30;
+    label2.fontFamily = "'Arial Black'";
+    label2.fill = 'SlateGray';
+    label2.strokeWidth = 5;
+    label2.stroke = 'white';
+
+     //仮
+     var label3 = Label('Drums1         Backing1         Melody1').addChildTo(this);
+     label3.setPosition(this.gridX.center(), 360);
+     label3.fontSize = 25;
+     label3.fontFamily = "'Arial Black'";
+     label3.fill = 'black';
+
+     var label3 = Label('Drums2         Backing2         Melody2').addChildTo(this);
+     label3.setPosition(this.gridX.center(), 530);
+     label3.fontSize = 25;
+     label3.fontFamily = "'Arial Black'";
+     label3.fill = 'black';
+
+     var label3 = Label('Drums3         Backing3         Melody3').addChildTo(this);
+     label3.setPosition(this.gridX.center(), 700);
+     label3.fontSize = 25;
+     label3.fontFamily = "'Arial Black'";
+     label3.fill = 'black';
+
+     var label3 = Label('Drums4         Backing4         Melody4').addChildTo(this);
+     label3.setPosition(this.gridX.center(), 870);
+     label3.fontSize = 25;
+     label3.fontFamily = "'Arial Black'";
+     label3.fill = 'black';
+
+
+    //ボタン
+    var shape = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(130, 360);
+    var shape2 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(320, 360);
+    var shape3 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(510, 360);
+
+    var shape4 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(130, 530);
+    var shape5 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(320, 530);
+    var shape6 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(510, 530);
+
+    var shape7 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(130, 700);
+    var shape8 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(320, 700);
+    var shape9 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(510, 700);
+
+    var shape10 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(130, 870);
+    var shape11 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(320, 870);
+    var shape12 = RectangleShape({
+      width: 140,
+      height: 80,
+      fill: '',
+      stroke: 'white',
+      strokeWidth: 8,
+    }).addChildTo(this).setPosition(510, 870);
+
+  },
+});
+/*
+ * メイン処理
+ */
+phina.main(function() {
+  // アプリケーションを生成
+  var app = GameApp({
+    title: 'laboratory',
+    // アセット読み込み
+    assets: ASSETS,
+    // MainScene から開始
+    startLabel: 'main',
+  });
+  // fps表示
+  //app.enableStats();
+  // 実行
+  app.run();
+});
